@@ -32,7 +32,7 @@ function Login() {
       setEmail("");
       setPassword("");
 
-      navigate("/");
+      navigate("/courses");
     }
   };
 

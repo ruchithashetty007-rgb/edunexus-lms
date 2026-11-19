@@ -20,7 +20,7 @@ function Register() {
     setLoading(true);
 
     const { data, error } = await supabase.auth.signUp({
-      email,
+      email: email.trim(),
       password,
       options: {
         data: {
@@ -33,6 +33,12 @@ function Register() {
 
     if (error) {
       alert(error.message);
+      return;
+    }
+
+    // Check whether this email is already registered
+    if (data.user && data.user.identities?.length === 0) {
+      alert("This email is already registered. Please log in instead.");
       return;
     }
 

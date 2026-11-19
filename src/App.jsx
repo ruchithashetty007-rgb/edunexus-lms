@@ -11,6 +11,7 @@ import Home from "./pages/Home.jsx";
 import Courses from "./pages/Courses.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import MyCourses from "./pages/MyCourses";
 
 function ScrollToSection() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/my-courses" element={<MyCourses />} />
       </Routes>
     </BrowserRouter>
   );
